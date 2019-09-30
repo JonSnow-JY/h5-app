@@ -67,3 +67,13 @@ FastClick.attach(document.body);
 ```
 
 ---
+
+##### 引入 vant
+
+**postcss 会与 vant 的样式有冲突，故需要在`postcss.config.js中做如下配置`**
+
+```javascript
+selectorBlackList: [".ignore", ".hairlines", ".van"],
+```
+
+---
