@@ -67,3 +67,84 @@ FastClick.attach(document.body);
 ```
 
 ---
+
+##### 引入 vant
+
+**postcss 会与 vant 的样式有冲突，故需要在`postcss.config.js中做如下配置`**
+
+```javascript
+selectorBlackList: [".ignore", ".hairlines", ".van"],
+```
+
+**配置`babel.config.js`文件，实现按需引入**
+
+- cnpm i babel-plugin-import -D
+
+```javascript
+plugins: [
+  [
+    "import",
+    {
+      libraryName: "vant",
+      libraryDirectory: "es",
+      style: true
+    },
+    "vant"
+  ]
+];
+```
+
+**在`main.js`文件中按需引入**
+
+```javascript
+import { Button } from "vant";
+Vue.use(Button);
+```
+
+**在组件中直接使用**
+
+```javascript
+<van-button type="default">默认按钮</van-button>
+```
+
+---
+
+##### 引入 mint-ui
+
+**修改`postcss.config.js`中的文件配置**
+
+```javascript
+selectorBlackList: [".ignore", ".hairlines", ".mint"],
+```
+
+**配置`babel.config.js`文件，实现按需引入**
+
+- cnpm i babel-plugin-component -D
+
+```javascript
+plugins: [
+  [
+    "component",
+    {
+      libraryName: "mint-ui",
+      style: true
+    },
+    "mint-ui"
+  ]
+];
+```
+
+**在`main.js`文件中按需引入(注意这里的引入方式与 vant 是不一样的)**
+
+```javascript
+import { Button } from "mint-ui";
+Vue.component(Button.name, Button);
+```
+
+**在组件中直接使用**
+
+```javascript
+<mt-button type="default">default</mt-button>
+```
+
+---
