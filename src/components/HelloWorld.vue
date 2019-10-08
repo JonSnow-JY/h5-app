@@ -33,6 +33,10 @@
     <p>一路走来，你不曾懂我，我亦不曾怪你。</p>
     <p>我不是为了显示自己的大度，也不是为了体现自己的大方。</p>
     <p>只想让你知道，感情不在，责备也不存在。</p>
+
+    <div class="border-test border">
+      全部全部全部全部全部全部全部全部全部
+    </div>
   </div>
 </template>
 
@@ -59,5 +63,14 @@ div {
   font-size: 14px;
   line-height: 30px;
   padding: 0 10px;
+}
+
+.border-test {
+  padding: 20px;
+  margin: 20px;
+}
+
+.border {
+  border: 0.5px solid #ccc;
 }
 </style>
