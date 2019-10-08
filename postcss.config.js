@@ -10,7 +10,7 @@ module.exports = {
     "postcss-px-to-viewport": {
       viewportWidth: 375,
       viewportHeight: 667,
-      unitPrecision: 3,
+      unitPrecision: 1,
       viewportUnit: "vw",
       selectorBlackList: [".ignore", ".hairlines", ".van"],
       minPixelValue: 1,
