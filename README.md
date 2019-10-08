@@ -51,6 +51,10 @@ export default num => {
 
 ---
 
+**对比淘宝 H5 版本，上面这种配置方式并不是很完美，有待改进，目前先这样使用**
+
+---
+
 ##### 通用插件
 
 - reset.css
@@ -148,3 +152,13 @@ Vue.component(Button.name, Button);
 ```
 
 ---
+
+##### 1px 边框
+
+```css
+.test-1px {
+  border: 0.5px solid #ccc;
+}
+```
+
+**直接设置为 0.5px，在表现上就是真正的 1 像素（在 ps 上验证过了，真的是 1px）**
