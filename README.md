@@ -162,5 +162,3 @@ Vue.component(Button.name, Button);
 ```
 
 **直接设置为 0.5px，在表现上就是真正的 1 像素（在 ps 上验证过了，真的是 1px）**
-
-测试
