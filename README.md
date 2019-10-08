@@ -68,48 +68,7 @@ FastClick.attach(document.body);
 
 ---
 
-##### 引入 vant
-
-**postcss 会与 vant 的样式有冲突，故需要在`postcss.config.js中做如下配置`**
-
-```javascript
-selectorBlackList: [".ignore", ".hairlines", ".van"],
-```
-
-**配置`babel.config.js`文件，实现按需引入**
-
-- cnpm i babel-plugin-import -D
-
-```javascript
-plugins: [
-  [
-    "import",
-    {
-      libraryName: "vant",
-      libraryDirectory: "es",
-      style: true
-    },
-    "vant"
-  ]
-];
-```
-
-**在`main.js`文件中按需引入**
-
-```javascript
-import { Button } from "vant";
-Vue.use(Button);
-```
-
-**在组件中直接使用**
-
-```javascript
-<van-button type="default">默认按钮</van-button>
-```
-
----
-
-##### 引入 mint-ui
+##### 引入 mint-ui(本框架已经很久没有更新了，以后移动端都不再使用此框架开发了，这里只是研究下引入的方式)
 
 **修改`postcss.config.js`中的文件配置**
 
