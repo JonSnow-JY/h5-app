@@ -1,21 +1,47 @@
 <template>
   <div class="home">
-    <HelloWorld msg="Welcome to Your Vue.js App" />
-    <van-button type="default">默认按钮</van-button>
-    <van-button type="primary">主要按钮</van-button>
-    <van-button type="info">信息按钮</van-button>
-    <van-button type="warning">警告按钮</van-button>
-    <van-button type="danger">危险按钮</van-button>
+    <van-swipe :autoplay="3000" indicator-color="white">
+      <van-swipe-item v-for="(item, idx) in 3" :key="idx">
+        <img
+          :src="require(`assets/images/bg${item}.png`)"
+          width="100%"
+          class="swipe-img"
+        />
+      </van-swipe-item>
+    </van-swipe>
+    <ul flex="box:mean" class="ul-btn-wrapper">
+      <li flex="box:mean">
+        <van-button type="primary">发<i />货</van-button>
+      </li>
+      <li flex="box:mean">
+        <van-button type="danger" @click="$router.push('/inquiry')"
+          >询<i />价</van-button
+        >
+      </li>
+    </ul>
   </div>
 </template>
 
 <script>
-import HelloWorld from "@/components/HelloWorld.vue";
-
 export default {
   name: "home",
-  components: {
-    HelloWorld
-  }
+  components: {}
 };
 </script>
+
+<style lang="scss" scoped>
+.swipe-img {
+  height: 150px;
+  float: left;
+}
+.ul-btn-wrapper {
+  margin-top: 40px;
+  li {
+    padding: 0 16px;
+    font-size: 20px;
+    i {
+      padding: 0 4px;
+    }
+  }
+}
+</style>
